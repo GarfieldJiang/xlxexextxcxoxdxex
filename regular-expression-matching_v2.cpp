@@ -3,6 +3,7 @@
 class Solution {
 public:
     bool isMatch(string s, string p) {
+        cout << "s = " << s << ", p = " << p << endl;
         int m = s.length();
         int n = p.length();
         vector<vector<int> > dp = vector<vector<int> >();
@@ -18,7 +19,7 @@ public:
 
     // dynamic programming - memoized recursion. Time: O(m^2 n), Space: O(mn).
     bool isMatch(const string& s, const string& p, int m, int n, int i, int j, vector<vector<int> >& dp) {
-        // cout << "Begin isMatch i = " << i << ", j = " << j << endl;
+        cout << "Begin isMatch i = " << i << ", j = " << j << endl;
         if (dp[i][j] >= 0) {
             return dp[i][j];
         }
@@ -37,6 +38,8 @@ public:
                     return dp[i][j] = 1;
                 }
             }
+
+            cout << "Weird!" << endl;
         }
 
         if (i >= m || (p[j] != '.' && p[j] != s[i])) {
@@ -49,8 +52,8 @@ public:
 
 TEST_CASE("Regular expression matching v2", "[ALL]") {
     Solution solution = Solution();
+    REQUIRE(solution.isMatch("a", "ab*a") == false);
     REQUIRE(solution.isMatch("aa", "a") == false);
-    REQUIRE(solution.isMatch("a", ".*..a*") == false);
     REQUIRE(solution.isMatch("a", ".*..a*") == false);
     REQUIRE(solution.isMatch("aaac", "a*a*a*b") == false);
     REQUIRE(solution.isMatch("aaac", "a*b*a*c") == true);
