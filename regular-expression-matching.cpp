@@ -10,6 +10,7 @@ public:
         vector<string> pElems = vector<string>();
         splitPatternToElems(p, pElems);
 
+        // Ugly way to manage a stack myself. Time: exponential, Space: O(n).
         stack<int> matchLengths; // stack to store the length of the previously done match.
         int charI = 0; // current index of the given string s.
         int elemI = 0; // current index of the element in pattern string p.

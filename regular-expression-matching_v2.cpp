@@ -16,7 +16,7 @@ public:
         return isMatch(s, p, m, n, 0, 0, dp);
     }
 
-    // dynamic programming - memoized recursion.
+    // dynamic programming - memoized recursion. Time: O(m^2 n), Space: O(mn).
     bool isMatch(const string& s, const string& p, int m, int n, int i, int j, vector<vector<int> >& dp) {
         // cout << "Begin isMatch i = " << i << ", j = " << j << endl;
         if (dp[i][j] >= 0) {
