@@ -51,4 +51,7 @@ TEST_CASE("Regular expression matching v2", "[ALL]") {
     Solution solution = Solution();
     REQUIRE(solution.isMatch("aa", "a") == false);
     REQUIRE(solution.isMatch("a", ".*..a*") == false);
+    REQUIRE(solution.isMatch("a", ".*..a*") == false);
+    REQUIRE(solution.isMatch("aaac", "a*a*a*b") == false);
+    REQUIRE(solution.isMatch("aaac", "a*b*a*c") == true);
 }
