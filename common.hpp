@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <stack>
 #define CATCH_CONFIG_MAIN
 #include "catch/include/catch.hpp"
 using namespace std;
