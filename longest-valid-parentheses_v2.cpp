@@ -23,7 +23,7 @@ public:
 
         int leftmost = n;
         stack<int> matchStack = stack<int>();
-        for (int i = firstLeftParenthesis, level = 0; i < n; i++)
+        for (int i = firstLeftParenthesis; i < n; i++)
         {
             if (s[i] == '(') {
                 matchStack.push(i);
