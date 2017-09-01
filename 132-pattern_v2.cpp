@@ -4,10 +4,6 @@ class Solution {
 public:
     // O(n log n) time.
     bool find132pattern(vector<int>& nums) {
-        if (nums.size() == 0) {
-            return false;
-        }
-        
         vector<int> mins;
         vector<int> maxs;
         
@@ -29,10 +25,6 @@ public:
     }
     
     bool binarySearchForInclusion(int num, vector<int>& mins, vector<int>& maxs) {
-        if (mins.size() == 0) {
-            return false;
-        }
-        
         for (int beg = 0, end = mins.size(), mid = end / 2; beg < end; mid = beg + (end - beg) / 2) {
             if (num < maxs[mid] && num > mins[mid]) {
                 return true;
