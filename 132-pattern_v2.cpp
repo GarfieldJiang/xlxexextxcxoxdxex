@@ -9,20 +9,21 @@ public:
         
         int minMaxIndex = -1;
         for (int i = 0; i < size; i++) {
+            if (minMaxIndex < 0 || nums[i] < mins[minMaxIndex]) {
+                minMaxIndex++;
+                maxs[minMaxIndex] = mins[minMaxIndex] = nums[i];
+                continue;
+            }
+            
             int afterWhich = binarySearchForInclusion(nums[i], mins, maxs, minMaxIndex + 1);
             if (afterWhich < 0) {
                 return true;
             }
             
-            if (minMaxIndex < 0 || nums[i] < mins[minMaxIndex]) {
-                minMaxIndex++;
-                maxs[minMaxIndex] = mins[minMaxIndex] = nums[i];
-            } else if (nums[i] > maxs[minMaxIndex]) {
-                int newMinMaxIndex = afterWhich;
-                maxs[newMinMaxIndex] = nums[i];
-                mins[newMinMaxIndex] = mins[minMaxIndex];
-                minMaxIndex = newMinMaxIndex;
-            }
+            int newMinMaxIndex = afterWhich;
+            maxs[newMinMaxIndex] = nums[i];
+            mins[newMinMaxIndex] = mins[minMaxIndex];
+            minMaxIndex = newMinMaxIndex;
         }
         
         return false;
