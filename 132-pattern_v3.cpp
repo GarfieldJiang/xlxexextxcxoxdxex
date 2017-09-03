@@ -10,8 +10,8 @@
 // - Before that, 'minValue' stores the minimum value met so far, and 'minIndex' the index
 //   'minValue' in the input.
 //
-// -  After that, we maintain 'maxValue' and 'minValue' so that they denote the biggest
-//    decreasing pair so far, until we found an input element less than 'minValue'.
+// - After that, we maintain 'maxValue' and 'minValue' so that they denote the biggest
+//   decreasing pair so far, until we found an input element less than 'minValue'.
 class Solution {
 public:
     bool find132pattern(vector<int>& nums) {
