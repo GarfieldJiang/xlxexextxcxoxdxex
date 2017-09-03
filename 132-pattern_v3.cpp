@@ -33,7 +33,7 @@ public:
                     hasDecreasingPair = true;
                     maxValue = nums[i];
                     maxIndex = i;
-                    updateMinValue(minIndex, minValue, maxValue, i + 1, nums);
+                    updateMinValue(minIndex, minValue, maxValue, nums);
                 }
                 continue;
             }
@@ -54,7 +54,7 @@ public:
                 minValue = maxValue;
                 maxValue = nums[i];
                 maxIndex = i;
-                updateMinValue(minIndex, minValue, maxValue, minIndex + 1, nums);
+                updateMinValue(minIndex, minValue, maxValue, nums);
             }
         }
         
@@ -62,8 +62,8 @@ public:
     }
     
 private:
-    inline void updateMinValue(int& minIndex, int& minValue, int maxValue, int startIndex, vector<int>& nums) {
-        for (int j = startIndex; j < nums.size(); j++) {
+    inline void updateMinValue(int& minIndex, int& minValue, int maxValue, vector<int>& nums) {
+        for (int j = minIndex + 1; j < nums.size(); j++) {
             if (nums[j] >= maxValue) {
                 break;
             }
