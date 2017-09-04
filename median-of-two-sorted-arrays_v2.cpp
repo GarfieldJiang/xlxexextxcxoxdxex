@@ -2,6 +2,7 @@ https://leetcode.com/problems/median-of-two-sorted-arrays/description/
 
 class Solution {
 public:
+    // O(n) time + O(1) space.
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
         int totalSize = nums1.size() + nums2.size();
 
