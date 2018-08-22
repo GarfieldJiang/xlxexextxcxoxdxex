@@ -1,6 +1,7 @@
 // https://leetcode.com/problems/wildcard-matching/description/
 
 // Slow but accepted DP method. O(m * n * n) time.
+// Logically there is a dp[0..m][0..n] array so that dp[i][j] means whether p[0..i] (length i + 1) and s[0..j] (length j + 1) matches.
 
 #define SWAP(a, b) { auto tmp = a; a = b; b = tmp; }
 
@@ -9,8 +10,7 @@ public:
     bool isMatch(string s, string p) {
         int m = p.size();
         int n = s.size();
-        
-        // dp[i][j] means whether p[0..i] (length i + 1) and s[0..j] (length j + 1) matches.
+
         auto dp = vector<bool>(n + 1, false);
         dp[0] = true;
         
