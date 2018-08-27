@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/n-queens-ii/description/
 
+// Directly following the solution to 'n-queens'.
 class Solution {
 public:
     int totalNQueens(int n) {
