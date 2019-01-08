@@ -6,6 +6,7 @@ public:
         if (n == 0) return 0;
         if (m == 0) return -1;
         
+        // Allocate a sufficiently long string and replicate A in it. This is very naive and not efficient.
         int maxTimes = (2 * m + n) / m;
         string repeated;
         repeated.reserve(maxTimes * m);
