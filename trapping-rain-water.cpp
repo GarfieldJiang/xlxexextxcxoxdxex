@@ -1,3 +1,5 @@
+// O(n) time, O(1) space.
+
 class Solution {
 public:
     int trap(vector<int>& height) {
